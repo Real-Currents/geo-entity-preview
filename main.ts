@@ -1,5 +1,6 @@
 import createEntityObjects from './modules/create-entity-objects';
-import {Observable} from "rxjs/Observable";
+import { Observable } from "rxjs/Observable";
+import { geoDemo } from "./modules/get-geo-data";
 
 const style = require('./styles/index.css');
 
@@ -8,3 +9,5 @@ const entityContainer: Observable<Array<any>> = Observable.create(obs => createE
 entityContainer.subscribe(entities => {
     entities.map(e => console.log(e));
 });
+
+

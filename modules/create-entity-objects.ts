@@ -1,6 +1,5 @@
 import {tsvParse} from "d3-dsv";
 import getEntityData from "./get-entity-data";
-import {Observable} from "rxjs/Observable";
 
 export default function createEntityObjects (entityObserver?) {
     const entities: Array<any> = [];
