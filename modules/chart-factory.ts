@@ -27,12 +27,14 @@ export default function createChart (options?, svg?: Selection<BaseType, {}, HTM
 
     (<any>window).svg = chart.svg;
 
+    (<any>window).container = chart.svg.select('#container');
+
     setTimeout(d => {
-        (<any>chart).container = ((chart.svg.select('#container')) ?
+        (<any>chart).container =  ((chart.svg.select('#container').nodes.length > 1) ?
             chart.svg.selectAll('g#container') :
-                    chart.svg.append('g')
+            chart.svg.append('g')
                         .attr('id', 'container')
-                )
+            )
             .append('g')
             .attr('transform', `translate(${chart.margin.left}, ${chart.margin.top})`);
     }, 1);
