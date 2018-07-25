@@ -26,8 +26,26 @@ html, body {
     stroke-width: 1px;
 }
 
+.roads {
+    fill: none;
+    stroke: saddlebrown;
+    stroke-width: 2px;
+}
+
 .boundary {
     fill: none;
     stroke: #7b5228;
     stroke-width: 1px;
+}
+
+.entities path {
+    fill: none;
+    stroke: blueviolet;
+    stroke-width: 4px;
+}
+
+.entities path:hover {
+    fill: none;
+    stroke: deepskyblue;
+    stroke-width: 5px;
 }

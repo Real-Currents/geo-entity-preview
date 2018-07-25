@@ -1,38 +1,43 @@
 import {tsvParse} from "d3-dsv";
 import getEntityData from "./get-entity-data";
 
-export default function createEntityObjects (entityObserver?) {
+export default function createEntityObjects (tsvFile, entityObserver?) {
     const entities: Array<any> = [];
 
     const output = document
         .getElementsByTagName('body')[0]
         .appendChild(document.createElement('pre'));
 
-    (async () => await getEntityData('AL071_with_header.tsv')
+    (async () => await getEntityData(tsvFile)
             .then(response => {
+                output.innerHTML = output.innerHTML + `[`;
+
                 tsvParse(response).map(d => {
                     const entity: {
                         id: string,
-                        entityType: string,
+                        // entityType: string,
                         geometry: any,
                         properties: any
                     } = {
                         'id': '',
-                        'entityType': '',
+                        // 'entityType': tsvFile.toString().replace(/\.tsv/, ''),
                         'geometry': '',
                         'properties': {}
                     };
 
+                    // console.log(d);
+
                     for (const p in d) {
+
                         switch (p) {
-                            case 'id':
+                            case 'feat_id': // 'id':
                                 entity['id'] = d[p];
                                 break;
                             case 'entitytype':
                                 entity['entityType'] = d[p];
                                 entity['entityType'] = '';
                                 break;
-                            case 'index_geometry':
+                            case 'geometry': // 'index_geometry':
                                 try {
                                     entity['geometry'] = JSON.parse(d[p].toString());
                                 } catch (e) {
@@ -55,11 +60,15 @@ export default function createEntityObjects (entityObserver?) {
                         }
                     }
 
-                    output.innerHTML = output.innerHTML + `
-${JSON.stringify(entity)},
-`;
+                    output.innerHTML = output.innerHTML + ((output.innerHTML.slice(-1)[0].match(/\[/) === null) ? `,
+    ` : `
+    `) +
+                        JSON.stringify(entity);
                     return entities.push(entity);
                 });
+
+                output.innerHTML = output.innerHTML + `
+]`;
 
                 if (typeof entityObserver.next == "function") {
                     entityObserver.next(entities);

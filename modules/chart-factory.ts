@@ -29,7 +29,7 @@ export default function createChart (options?, svg?: Selection<BaseType, {}, HTM
 
     (<any>window).container = chart.svg.select('#container');
 
-    setTimeout(d => {
+    // setTimeout(d => {
         (<any>chart).container =  ((chart.svg.select('#container').nodes.length > 1) ?
             chart.svg.selectAll('g#container') :
             chart.svg.append('g')
@@ -37,7 +37,7 @@ export default function createChart (options?, svg?: Selection<BaseType, {}, HTM
             )
             .append('g')
             .attr('transform', `translate(${chart.margin.left}, ${chart.margin.top})`);
-    }, 1);
+    // }, 1);
 
     (<any>chart).render = (renderFunction, data, clickFn = () => {}) => {
 
