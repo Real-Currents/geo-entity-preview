@@ -22,8 +22,8 @@ export default async function index() {
         const geoWorld = await geoDemo(
             d3GeoChart,
             true,
-            [ -86.85, 33.54 ],
-            1500000
+            [ -152, 61 ],
+            10000
         );
 
         entityContainer.subscribe(entities => {

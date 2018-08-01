@@ -5,11 +5,11 @@ import createChart from "./chart-factory";
 export default async function geoDemo (chart, enabled, center?, scale?) {
     if (!enabled) return;
 
-    const projection = d3.geoEquirectangular().center(center || [ -86.862, 33.545 ])
+    const projection = d3.geoEquirectangular().center(center || [ -110, 40 ])
         // .geoConicEqualArea().parallels([ 30, 40 ]).rotate([ 100, 0 ])
         // .geoAlbersUsa()
         // .geoEquirectangular()
-        .scale(scale || 1500000);
+        .scale(scale || 1500);
 
     const world = async (geoClass) => await Promise.all([
             (await fetch(`data/${geoClass}.json`)).json()

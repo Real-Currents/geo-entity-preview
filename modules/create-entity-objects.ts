@@ -1,7 +1,7 @@
 import {tsvParse} from "d3-dsv";
 import getEntityData from "./get-entity-data";
 
-export default function createEntityObjects (tsvFile, entityObserver?) {
+export default function createEntitiesFromTSV (tsvFile, entityObserver?) {
     const entities: Array<any> = [];
 
     const output = document

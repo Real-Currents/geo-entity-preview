@@ -28,8 +28,8 @@ html, body {
 
 .roads {
     fill: none;
-    stroke: saddlebrown;
-    stroke-width: 2px;
+    stroke: slategray;
+    stroke-width: 1px;
 }
 
 .boundary {
