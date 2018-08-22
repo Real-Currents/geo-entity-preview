@@ -5,7 +5,7 @@ import createChart from "./chart-factory";
 export default async function geoDemo (chart, enabled, center?, scale?) {
     if (!enabled) return;
 
-    const projection = d3.geoEquirectangular().center(center || [ -110, 40 ])
+    const projection = d3.geoMercator().center(center || [ -110, 40 ])
         // .geoConicEqualArea().parallels([ 30, 40 ]).rotate([ 100, 0 ])
         // .geoAlbersUsa()
         // .geoEquirectangular()

@@ -8,7 +8,7 @@ const style = require('../styles/index.css');
 
 export default async function index() {
     const entityContainer: Observable<Array<any>> = Observable.create(obs =>
-        createEntitiesFromTSV('mnr-roads_anchorage.json', obs));
+        createEntitiesFromTSV('mnr-streetpro_counties.json', obs));
 
     (async () => {
         const d3GeoChart = await createChart({
