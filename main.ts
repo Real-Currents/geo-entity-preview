@@ -1,3 +1,3 @@
-import index from './modules/admin_anchorage';
+import index from './modules/admin_boundaries';
 
 index();
