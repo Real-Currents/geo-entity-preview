@@ -24,7 +24,13 @@ function mapEntities (data) {
     for (const p in data) {
 
         switch (p) {
-            case 'ID': // 'id':
+            case 'ID':
+                entity['id'] = data[p];
+                break;
+            case 'id':
+                entity['id'] = data[p];
+                break;
+            case 'feat_id': // 'id':
                 entity['id'] = data[p];
                 break;
             case 'entityType':
@@ -59,7 +65,7 @@ function mapEntities (data) {
     return entities.push(entity);
 }
 
-export default function createEntitiesFromJSON (jsonFile, entityObserver?) {
+export function createEntitiesFromJSON (jsonFile, entityObserver?) {
 
     dataFile = jsonFile;
 
@@ -125,12 +131,17 @@ export function createEntitiesFromTSV (tsvFile, entityObserver?) {
                         for (const p in d) {
 
                             switch (p) {
+                                case 'ID':
+                                    entity['id'] = d[p];
+                                    break;
+                                case 'id':
+                                    entity['id'] = d[p];
+                                    break;
                                 case 'feat_id': // 'id':
                                     entity['id'] = d[p];
                                     break;
                                 case 'entitytype':
                                     entity['entityType'] = d[p];
-                                    entity['entityType'] = '';
                                     break;
                                 case 'geometry': // 'index_geometry':
                                     try {

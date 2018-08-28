@@ -1,6 +1,6 @@
 import { Observable } from "rxjs/Observable";
 import * as d3 from 'd3';
-import createEntitiesFromTSV from './create-entity-objects';
+import { createEntitiesFromJSON } from './create-entity-objects';
 import geoDemo from "./get-geo-data";
 import createChart from "./chart-factory";
 
@@ -8,7 +8,7 @@ const style = require('../styles/index.css');
 
 export default async function index() {
     const entityContainer: Observable<Array<any>> = Observable.create(obs =>
-        createEntitiesFromTSV('mnr-streetpro_counties.json', obs));
+        createEntitiesFromJSON('mnr-streetpro_counties.json', obs));
 
     (async () => {
         const d3GeoChart = await createChart({

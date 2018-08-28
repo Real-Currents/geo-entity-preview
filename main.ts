@@ -1,3 +1,3 @@
-import index from './modules/admin_boundaries';
+import index from './modules/mnr_entities';
 
 index();

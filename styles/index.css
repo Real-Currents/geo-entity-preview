@@ -21,7 +21,8 @@ html, body {
 }
 
 .land {
-    fill: #ede9c9;
+    /*fill: #ede9c9;*/
+    fill: none;
     stroke: #7b5228;
     stroke-width: 1px;
 }

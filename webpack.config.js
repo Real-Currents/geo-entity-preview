@@ -76,7 +76,8 @@ module.exports = {
                 port: 3000,
                 server: {
                     baseDir: [ path.resolve(__dirname, '') ]
-                }
+                },
+                startPath: 'index.html?entityType=streetpro_counties'
             },
             // plugin options
             {
