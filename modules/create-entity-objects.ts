@@ -10,12 +10,10 @@ function mapEntities (data) {
     const entity: {
         id: string,
         entityType: string,
-        geometry: any,
         properties: any
     } = {
         'id': '',
         'entityType': dataFile.toString().replace(/\.(?:json|tsv)/, ''),
-        'geometry': '',
         'properties': {}
     };
 
@@ -45,8 +43,10 @@ function mapEntities (data) {
                     entity['geometry'] = JSON.parse(data[p].toString());
                 } catch (e) {
                     console.log(`GeoJSON parse error: ${e}`);
-                    console.log(`${data['ID']}: `, data[p]);
-                    entity['geometry'] = data[p];
+                    console.log(data[p]);
+                    if (data['geometry'] !== undefined) {
+                        entity['geometry'] = data[p];
+                    }
                 }
                 break;
             default:
@@ -117,12 +117,9 @@ export function createEntitiesFromTSV (tsvFile, entityObserver?) {
                         const entity: {
                             id: string,
                             // entityType: string,
-                            geometry: any,
                             properties: any
                         } = {
                             'id': '',
-                            // 'entityType': tsvFile.toString().replace(/\.tsv/, ''),
-                            'geometry': '',
                             'properties': {}
                         };
 
@@ -148,14 +145,19 @@ export function createEntitiesFromTSV (tsvFile, entityObserver?) {
                                         entity['geometry'] = JSON.parse(d[p].toString());
                                     } catch (e) {
                                         console.log(`GeoJSON parse error: ${e}`);
-                                        entity['geometry'] = d[p];
+                                        if (d['geometry'] !== undefined) {
+                                            entity['geometry'] = d[p];
+                                        }
                                     }
                                     break;
                                 case 'a2_code':
                                     entity['properties']['A2_CODE'] = d[p];
                                     break;
+                                case 'miCode':
+                                    entity['properties']['miCode'] = d[p];
+                                    break;
                                 case 'micode':
-                                    entity['properties']['MICODE'] = d[p];
+                                    entity['properties']['miCode'] = d[p];
                                     break;
                                 default:
                                     const prop = p.toString()
@@ -163,6 +165,15 @@ export function createEntitiesFromTSV (tsvFile, entityObserver?) {
                                         .replace(/\_(\w)/, (chr, first) => ' ' + first.toUpperCase())
                                         .replace(/\_/, ' ');
                                     entity['properties'][prop] = d[p];
+                            }
+                        }
+
+                        if (!entity['id']) {
+                            // For entities without id's, try using another property as id value
+                            if (entity['properties']) {
+                                if (entity['properties']['miCode']) {
+                                    entity['id'] = 'miCode-'+ entity['properties']['miCode'];
+                                }
                             }
                         }
 
