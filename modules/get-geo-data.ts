@@ -8,7 +8,8 @@ export default async function geoDemo (chart, enabled, center?, scale?) {
         // .geoAlbersUsa()
         // .geoConicEqualArea().parallels([ 30, 40 ]).rotate([ 100, 0 ])
         // .geoEquirectangular().center(center || [ -125, 55 ])
-        .scale(scale || 500);
+        .scale(scale || 500)
+        .translate([ 100, 100 ]);
 
     const world = async (geoClass) => await Promise.all([
             (await fetch(`data/${geoClass}.json`)).json()
