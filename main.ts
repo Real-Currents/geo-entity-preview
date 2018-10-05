@@ -1,3 +1,3 @@
-import index from './modules/tsv-entities';
+import index from './modules/mnr-entities';
 
 index();
