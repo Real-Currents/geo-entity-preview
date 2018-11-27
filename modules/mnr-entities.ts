@@ -7,7 +7,7 @@ import { createEntitiesFromJSON } from './create-entity-objects';
 const style = require('../styles/index.css');
 
 export default async function index() {
-    const d3GeoChart = await createChart({
+    const d3GeoChart = createChart({
         width: innerWidth,
         height: innerHeight,
         margin: {top: 0, right: 0, bottom: 0, left: 0}

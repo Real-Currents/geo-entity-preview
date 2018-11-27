@@ -4,38 +4,30 @@
     "geometry": {
         "coordinates": [
             [
-                -129.991396,
-                55.28472
+                -132.353791,
+                57.0887
             ],
             [
-                -129.990771,
-                55.287165
-            ],
-            [
-                -129.991412,
-                55.291476
-            ],
-            [
-                -129.991656,
-                55.296694
+                -132.373798,
+                57.091569
             ]
         ],
         "type": "LineString"
     },
-    "id": "00005858-5800-1200-0000-000077359460-AK016",
+    "id": "00005858-5800-1200-0000-000077359482-AK105",
     "properties": {
-        "Perimeter_Meters": 4237151,
+        "Perimeter_Meters": 1291516,
         "miCode": "50010102",
         "Name_Lng": "ENG",
-        "Latitude": 52.680206738441285,
-        "Longitude": -92.487157894832,
-        "Area_Meters": 3.6561120004E10,
-        "Name": "Aleutians West",
+        "Latitude": 58.120116616776556,
+        "Longitude": -135.27797639035782,
+        "Area_Meters": 2.8271609619E10,
+        "Name": "Hoonah-Angoon",
         "Popclass": 6,
-        "SmartLabel": "Aleutians West",
+        "SmartLabel": "Hoonah-Angoon",
         "A1_Abbrev": "AK",
-        "A2_Code": "02016",
-        "Population": 5561,
-        "ID": "00005858-5800-1200-0000-000077359460"
+        "A2_Code": "02105",
+        "Population": 2150,
+        "ID": "00005858-5800-1200-0000-000077359482"
     }
 }]
