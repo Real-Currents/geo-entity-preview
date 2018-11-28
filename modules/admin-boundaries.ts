@@ -14,7 +14,7 @@ export default async function index() {
         const d3GeoChart = await createChart({
             width: innerWidth,
             height: innerHeight,
-            margin: {top: 0, right: 0, bottom: 0, left: 0}
+            margin: {top: 0, right: 0, bottom: 100, left: 0}
         });
 
         console.log(d3GeoChart.container);
@@ -22,8 +22,8 @@ export default async function index() {
         const geoWorld = await geoDemo(
             d3GeoChart,
             true,
-            [ -151, 61 ],
-            12000
+            [ -75, 43 ],
+            10000
         );
 
         entityContainer.subscribe(entities => {

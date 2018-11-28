@@ -77,7 +77,7 @@ module.exports = {
                 server: {
                     baseDir: [ path.resolve(__dirname, '') ]
                 },
-                startPath: 'index.html?entityType=streetpro_counties'
+                startPath: 'index.html?entityType=admin_boundaries'
             },
             // plugin options
             {
