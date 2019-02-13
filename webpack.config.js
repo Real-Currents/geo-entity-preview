@@ -44,6 +44,10 @@ module.exports = {
                 loader: 'style!css!compass?outputStyle=expanded&' +
                 'includePaths[]=' +
                 (path.resolve(__dirname, './node_modules'))
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
             }
         ]
     },

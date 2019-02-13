@@ -3,10 +3,16 @@ import * as d3 from 'd3';
 import geoDemo from "./get-geo-data";
 import createChart from "./chart-factory";
 import { createEntitiesFromJSON } from './create-entity-objects';
+import loadSVG from "./load-svg";
 
+
+const model = loadSVG(`../models/canvas.svg`);
 const style = require('../styles/index.css');
 
 export default async function index() {
+    model.setAttribute('style', 'width: 512px; height: 256px;');
+    window.document.body.appendChild(model);
+
     const d3GeoChart = createChart({
         width: innerWidth,
         height: innerHeight,
@@ -70,5 +76,6 @@ export default async function index() {
                 }
             })();
         }
+
     });
 }
