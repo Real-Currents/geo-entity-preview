@@ -66,7 +66,7 @@ module.exports = {
                             'firefox',
                 ],
                 files: [{
-                    match: [ '**/*.js' ],
+                    match: [ './modules/*.js' ],
                     fn: function(event, file) {
                         if (event === "change") {
                             const bs = require('browser-sync').get('bs-webpack-plugin');
@@ -81,7 +81,7 @@ module.exports = {
                 server: {
                     baseDir: [ path.resolve(__dirname, '') ]
                 },
-                startPath: 'index.html?entityType=admin_boundaries'
+                startPath: 'index.html'
             },
             // plugin options
             {

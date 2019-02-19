@@ -6,7 +6,7 @@ import { createEntitiesFromJSON } from './create-entity-objects';
 import loadSVG from "./load-svg";
 
 
-const model = loadSVG(`../models/canvas.svg`);
+const model = loadSVG('models/canvas.svg');
 const style = require('../styles/index.css');
 
 export default async function index() {
@@ -20,14 +20,18 @@ export default async function index() {
     });
 
     const entityContainer: Observable<Array<any>> = Observable.create(obs => {
-        if (window.location.search.match('entityType') == null) {
+        if (window.location.search.match('counties') == null ||
+            window.location.search.match('entities') == null) {
             return obs.next([]);
         }
 
         const locationQuery = new URLSearchParams(window.location.search);
-        const entityType: String = locationQuery.get('entityType');
+        const countyFips: String[] = locationQuery.get('counties').split(',');
+        const entityType: String[] = locationQuery.get('entities').split(',');
 
-        createEntitiesFromJSON(`mnr-${entityType}.json`, obs);
+        if (countyFips.length > 0 && entityType.length > 0) {
+            createEntitiesFromJSON(`${entityType[0]}/${countyFips[0]}.json`, obs);
+        }
     });
 
     entityContainer.subscribe(entities => {

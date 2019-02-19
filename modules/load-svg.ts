@@ -1,6 +1,6 @@
-export default function loadSVG (filePath) {
+export default function loadSVG (path) {
+    const file = require(__dirname + '/' + path);
     const temp =  window.document.createElement('div');
-    console.log(filePath);
-    temp.insertAdjacentHTML('afterbegin', require('../models/canvas.svg').trim());
+    temp.insertAdjacentHTML('afterbegin', file.trim());
     return temp.children[0];
 }
