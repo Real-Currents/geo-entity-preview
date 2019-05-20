@@ -1,3 +1,3 @@
-import index from './modules/load-entities';
+import index from './modules/index';
 
 index();

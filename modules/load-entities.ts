@@ -1,13 +1,13 @@
-import { Observable } from 'rxjs';
 import * as d3 from 'd3';
+import { Observable } from 'rxjs';
 import geoDemo from './get-geo-data';
 import createChart from "./chart-factory";
 import { createEntitiesFromJSON } from './create-entity-objects';
 import loadSVG from './load-svg';
 
+require('../styles/index.css');
 
 const model = loadSVG('models/canvas.svg');
-const style = require('../styles/index.css');
 
 export default async function index() {
     model.setAttribute('style', 'width: 512px; height: 256px;');
