@@ -1,5 +1,5 @@
 {
-  "name": "multinet-r-entities",
+  "name": "geo-entity-preview",
   "version": "1.0.0",
   "description": "",
   "main": "main.ts",
@@ -15,8 +15,9 @@
     ]
   },
   "dependencies": {
-    "@types/d3-dsv": "^1.0.36",
-    "@types/node": "^6.14.3",
+    "@types/d3-dsv": "*",
+    "@types/node": "^10.10.1",
+    "@types/node-fetch": "^2.1.6",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-es2017": "^6.24.1",
@@ -24,15 +25,16 @@
     "bable-loader": "0.0.1-security",
     "bootstrap": "^4.1.2",
     "braces": "^2.3.2",
-    "browser-sync": "*",
     "browser-sync-webpack-plugin": "*",
     "codelyzer": "~3.2.0",
     "core-js": "^2.6.5",
-    "css-loader": "^0.28.11",
+    "css-loader": "^2.1.1",
     "d3": "^5.9.1",
     "d3-dsv": "^1.1.1",
     "debug": "^3.2.6",
     "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^3.0.1",
+    "fsevents": "^2.0.7",
     "hoek": "^5.0.4",
     "html-webpack-plugin": "^3.2.0",
     "jasmine-core": "~2.6.2",
@@ -45,9 +47,8 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "lodash": "^4.17.11",
     "micromatch": "^3.1.10",
-    "pb-design-system": "^5.0.1",
     "protractor": "^5.4.2",
-    "rxjs": "^5.5.12",
+    "rxjs": "^6.3.2",
     "style-loader": "^0.21.0",
     "svg-inline-loader": "^0.8.0",
     "ts-loader": "^3.2.0",
@@ -60,6 +61,7 @@
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.5",
     "shapefile": "^0.6.6",
     "topojson": "^3.0.2",
     "webpack-dev-server": "^3.2.0"

@@ -1,9 +1,9 @@
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs';
 import * as d3 from 'd3';
-import geoDemo from "./get-geo-data";
+import geoDemo from './get-geo-data';
 import createChart from "./chart-factory";
 import { createEntitiesFromJSON } from './create-entity-objects';
-import loadSVG from "./load-svg";
+import loadSVG from './load-svg';
 
 
 const model = loadSVG('models/canvas.svg');

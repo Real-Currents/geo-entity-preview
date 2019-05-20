@@ -1,4 +1,4 @@
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs';
 import * as d3 from 'd3';
 import { createEntitiesFromTSV } from './create-entity-objects';
 import geoDemo from "./get-geo-data";

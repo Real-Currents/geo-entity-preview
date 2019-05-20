@@ -1,5 +1,5 @@
-import geoDemo from "./get-geo-data";
-import createChart from "./chart-factory";
+import geoDemo from './get-geo-data';
+import createChart from './chart-factory';
 
 const style = require('../styles/index.css');
 
