@@ -66,7 +66,7 @@ module.exports = {
                             'firefox',
                 ],
                 files: [{
-                    match: [ './modules/*.js' ],
+                    match: [ './modules/*.ts' ],
                     fn: function(event, file) {
                         if (event === "change") {
                             const bs = require('browser-sync').get('bs-webpack-plugin');
