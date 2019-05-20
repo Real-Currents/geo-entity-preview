@@ -6,7 +6,7 @@ export default async function geoDemo (chart, enabled, center?, scale?) {
 
     let start_x = chart.width/2, start_y = chart.height/2;
 
-    const projection = d3.geoMercator().center(center || [ -110, 40 ])
+    const projection = d3.geoMercator().center(center || [ -120, 45 ])
         // .geoAlbersUsa()
         // .geoConicEqualArea().parallels([ 30, 40 ]).rotate([ 100, 0 ])
         // .geoEquirectangular().center(center || [ -125, 55 ])
