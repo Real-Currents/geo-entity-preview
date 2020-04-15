@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import * as d3 from 'd3';
-import geoDemo from './get-geo-data';
+import geoDemo from './geo-demo';
 import createChart from './chart-factory';
 import { createEntitiesFromTSV } from './create-entity-objects';
 

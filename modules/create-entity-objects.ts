@@ -1,4 +1,4 @@
-import {tsvParse} from "d3-dsv";
+import { tsvParse } from "d3-dsv";
 import getEntityData from "./get-entity-data";
 
 let dataFile: String;

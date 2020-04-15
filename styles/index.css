@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-color: #759dd1;
 }
 
 .axis>* {
@@ -14,16 +15,25 @@ html, body {
     fill: grey;
 }
 
-.river {
+.boundary {
     fill: none;
-    stroke: #759dd1;
+    stroke: #7b5228;
     stroke-width: 1px;
 }
 
 .land {
     /*fill: #ede9c9;*/
+    /* The topology for outline of the majority
+     * of the land mass is inside-out, unfortunately
+     */
     fill: none;
     stroke: #7b5228;
+    stroke-width: 1px;
+}
+
+.water {
+    fill: none;
+    stroke: blue;
     stroke-width: 1px;
 }
 
@@ -33,20 +43,20 @@ html, body {
     stroke-width: 1px;
 }
 
-.boundary {
-    fill: none;
-    stroke: #7b5228;
-    stroke-width: 1px;
-}
-
 .entities path {
     fill: none;
     stroke: blueviolet;
-    stroke-width: 4px;
+    stroke-width: 2px;
 }
 
 .entities path:hover {
     fill: none;
     stroke: deepskyblue;
-    stroke-width: 5px;
+    stroke-width: 4px;
+}
+
+.overlay {
+    fill: none;
+    fill-opacity: 0.0;
+    pointer-events: all;
 }

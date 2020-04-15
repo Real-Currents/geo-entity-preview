@@ -1,9 +1,9 @@
 import * as d3 from 'd3';
-import geoDemo from './get-geo-data';
-import createChart from './chart-factory';
-import loadSVG from './load-svg';
 import { Observable } from 'rxjs';
-import {createEntitiesFromJSON} from './create-entity-objects';
+import createChart from './chart-factory';
+import geoDemo from './geo-demo';
+import loadSVG from './load-svg';
+import { createEntitiesFromJSON } from './create-entity-objects';
 
 require('../styles/index.css');
 
