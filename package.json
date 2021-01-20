@@ -15,9 +15,6 @@
     ]
   },
   "dependencies": {
-    "@types/d3-dsv": "*",
-    "@types/node": "^10.10.1",
-    "@types/node-fetch": "^2.1.6",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-es2017": "^6.24.1",
@@ -61,6 +58,10 @@
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
+    "@types/d3": "^6.2.0",
+    "@types/d3-dsv": "*",
+    "@types/node": "^10.10.1",
+    "@types/node-fetch": "^2.1.6",
     "browser-sync": "^2.26.5",
     "shapefile": "^0.6.6",
     "topojson": "^3.0.2",
