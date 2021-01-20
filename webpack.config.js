@@ -66,7 +66,7 @@ module.exports = {
                             'firefox',
                 ],
                 files: [{
-                    match: [ './modules/*.ts' ],
+                    match: [ './src/*.ts' ],
                     fn: function(event, file) {
                         if (event === "change") {
                             setTimeout(function () {

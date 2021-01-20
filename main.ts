@@ -1,3 +1,3 @@
-import index from './modules/index';
+import index from './src/index';
 
 index();

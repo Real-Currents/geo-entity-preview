@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "baseUrl": "./modules/",
+        "baseUrl": "./src/",
         "declaration": false,
         "emitDecoratorMetadata": false,
         "experimentalDecorators": false,
