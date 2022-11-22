@@ -62,7 +62,7 @@
     "@types/d3-dsv": "*",
     "@types/node": "^10.10.1",
     "@types/node-fetch": "^2.1.6",
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.27.10",
     "shapefile": "^0.6.6",
     "topojson": "^3.0.2",
     "webpack-dev-server": "^3.2.0"
